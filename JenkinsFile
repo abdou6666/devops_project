@@ -1,24 +1,36 @@
 pipeline {
     agent any
 
+    environment {
+        // Define the person and branch information
+        PERSON = 'medalii'
+        BRANCH = 'medali'
+    }
+
     stages {
-        stage('Checkout') {
+        stage("Retrieve code for ") {
             steps {
-                // Utilisation de Git pour récupérer le code
-                git branch: 'medali', url: 'https://github.com/abdou6666/devops_project.git'
+                // Checkout the specified branch
+                checkout( [$class: 'GitSCM', branches: [[name: "${BRANCH}"]], userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]])
             }
         }
-
-        stage('Clean compile maven') {
+        stage("Build and Clean for ") {
             steps {
-                // Exécution des commandes Mavenf
+                // Execute the Maven command to clean and compile
                 sh 'mvn clean compile'
             }
         }
-        stage('Clean Workspace') {
+        stage("Run Tests for ") {
             steps {
-                deleteDir()
-       }
-}
+                // Execute the Maven command to run tests
+                sh 'mvn test'
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs() // Clean up the workspace regardless of the build result
+        }
     }
 }

@@ -11,3 +11,5 @@ Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217
 	achat.iml,4\a\4a938249f4d174adc7e536ac793ceb734147de98
 ;
 JenkinsFile,2\2\22baaa42babe40fa251079ed1e8167c0eef7a13f
+;
+Jenkinsfile,0\c\0c2c5c506cef0ed2d3ad2b7e45e97980b66f5520
