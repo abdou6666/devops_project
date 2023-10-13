@@ -1,1 +1,20 @@
+pipeline {
+    agent any
+ 
+    stages {
+        stage('Récupération du code') {
+            steps {
+                // Utilisation de Git pour récupérer le code
+                git branch: 'anis', url: 'https://github.com/abdou6666/devops_project.git'
+            }
+        }
+ 
+        stage('Nettoyage et compilation avec Maven') {
+            steps {
+                // Exécution des commandes Maven
+                sh 'mvn clean compile'
+            }
+        }
+    }
+}
 
