@@ -11,7 +11,7 @@ pipeline {
 
         stage('Clean compile maven') {
             steps {
-                // Exécution des commandes Maven
+                // Exécution des commandes Mavenf
                 sh 'mvn clean compile'
             }
         }
