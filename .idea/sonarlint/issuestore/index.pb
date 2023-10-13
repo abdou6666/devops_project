@@ -1,0 +1,13 @@
+
+|
+Lsrc/main/java/tn/esprit/rh/achat/controllers/CategorieProduitController.java,c\1\c1a89e2c5d5f3966bce3e096d96c2d018b79d69f
+w
+Gsrc/main/java/tn/esprit/rh/achat/controllers/ProduitRestController.java,4\4\44049d0dceb7e63b9cff4011ee7654aee115e79c
+{
+Ksrc/main/java/tn/esprit/rh/achat/controllers/SecteurActiviteController.java,5\0\50feb469aec0759f3d8164f6fd0acb819eb83d95
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
+9
+	achat.iml,4\a\4a938249f4d174adc7e536ac793ceb734147de98
+;
+JenkinsFile,2\2\22baaa42babe40fa251079ed1e8167c0eef7a13f
