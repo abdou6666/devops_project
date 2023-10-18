@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dataset>
+    <stock
+            LIBELLE_STOCK="stock 1"
+            ID_STOCK="1"
+            qte="1"
+            QTE_MIN="1"
+
+    />
+</dataset>
