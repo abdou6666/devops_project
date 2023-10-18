@@ -15,6 +15,12 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+                stage(' maven install') {
+            steps {
+                // Exécution des commandes Maven
+                sh 'mvn install'
+            }
+        }
         stage('Clean Workspace') {
             steps {
                 deleteDir()
