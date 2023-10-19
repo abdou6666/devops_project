@@ -13,3 +13,11 @@ Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217
 JenkinsFile,2\2\22baaa42babe40fa251079ed1e8167c0eef7a13f
 ;
 Jenkinsfile,0\c\0c2c5c506cef0ed2d3ad2b7e45e97980b66f5520
+f
+6src/main/java/tn/esprit/rh/achat/entities/Produit.java,e\2\e2220286d599e5889fd98c23f8c36a95afe2a3cd
+d
+4src/main/java/tn/esprit/rh/achat/entities/Stock.java,a\5\a5c49a5cefc42bc70e4059187de7e58eb40bff0f
+t
+Dsrc/main/java/tn/esprit/rh/achat/repositories/ProduitRepository.java,3\5\35aa92414d0e0d0a1e38852b39357e6415b49290
+f
+6src/main/java/tn/esprit/rh/achat/AchatApplication.java,b\4\b413c620a5bd35e10018a5ab6033974f72b71423
