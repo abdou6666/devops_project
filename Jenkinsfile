@@ -15,7 +15,7 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage("SonarQube Analysis") {
+        //stage("SonarQube Analysis") {
         //     steps {
         //         // Set Java 11 for this stage
         //         tool name: 'JAVA_HOME', type: 'jdk'
