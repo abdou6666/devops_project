@@ -35,10 +35,10 @@ pipeline {
         //     }
         // }
            
-        stage('Clean Workspace') {
-            steps {
-                deleteDir()
-       }
-}
+//         stage('Clean Workspace') {
+//             steps {
+//                 deleteDir()
+//        }
+// }
     }
 }
