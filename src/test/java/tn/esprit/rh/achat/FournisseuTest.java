@@ -27,7 +27,7 @@ import static org.mockito.Mockito.verify;
 
 @ContextConfiguration(classes = {FournisseurServiceImpl.class})
 @ExtendWith(SpringExtension.class)
-public class FournisseuTest {
+class FournisseuTest {
 
     @MockBean
     private DetailFournisseurRepository detailFournisseurRepository;
@@ -61,7 +61,7 @@ public class FournisseuTest {
     }
 
     @Test
-   public void addFournisseur(){
+    void addFournisseur() {
         Fournisseur newFournisseur = new Fournisseur();
         newFournisseur.setIdFournisseur(1L);
         newFournisseur.setLibelle("New Libelle");
@@ -77,6 +77,27 @@ public class FournisseuTest {
 
         // Verify that the repository's save method was called
         verify(fournisseurRepository, times(1)).save(any(Fournisseur.class));
+    }
+
+    @Test
+    void testGetFournisseurById() {
+        // Create a sample Fournisseur entity with a known ID
+        Long fournisseurId = 1L;
+        Fournisseur expectedFournisseur = new Fournisseur();
+        expectedFournisseur.setIdFournisseur(fournisseurId);
+        expectedFournisseur.setLibelle("Sample Libelle");
+
+        // Mock the behavior of the FournisseurRepository's findById method
+        when(fournisseurRepository.findById(fournisseurId)).thenReturn(Optional.of(expectedFournisseur));
+
+        // Call the service method to get the Fournisseur by ID
+        Fournisseur retrievedFournisseur = fournisseurServiceImpl.retrieveFournisseur(fournisseurId);
+
+        // Verify that the Fournisseur was retrieved correctly
+        assertSame(expectedFournisseur, retrievedFournisseur);
+
+        // Verify that the repository's findById method was called
+        verify(fournisseurRepository, times(1)).findById(fournisseurId);
     }
 
 }
