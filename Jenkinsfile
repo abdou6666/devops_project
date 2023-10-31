@@ -48,7 +48,7 @@ pipeline {
 
                      // Authentification Docker Hub avec des informations d'identification secrètes
                      withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
-                        sh "docker login -u medrouahi -p ${pwd}"
+                        sh "docker login -u anisammar422 -p ${pwd}"
                          // Poussez l'image Docker
                          Image.push()
                      }
