@@ -69,7 +69,7 @@ stage('Run Docker Compose') {
             def composeFilePath = "/var/lib/jenkins/workspace/Anis_Ammar_5TWIN3/docker-compose.yml"
 
             // Run the docker-compose command with the file path
-            sh "docker compose up -d"
+            sh "docker-compose up -d"
         }
     }
 }
