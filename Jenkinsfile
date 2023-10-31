@@ -34,7 +34,7 @@ pipeline {
         //         }
         //     }
         // }
-//       stage('Build and Push front Image') {
+       stage('Build and Push front Image') {
              steps {
                  script {
                      checkout([
@@ -49,7 +49,7 @@ pipeline {
                      // Authentification Docker Hub avec des informations d'identification secrètes
                      withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
                         sh "docker login -u medrouahi -p ${pwd}"
-        //                 // Poussez l'image Docker
+                         // Poussez l'image Docker
                          Image.push()
                      }
                  }
