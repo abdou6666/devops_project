@@ -113,7 +113,8 @@
 
 
 		</plugins>
-			<pluginManagement>
+		<finalName>achat</finalName>
+		<pluginManagement>
 				<plugins>
 					<plugin>
 						<groupId>org.sonarsource.scanner.maven</groupId>

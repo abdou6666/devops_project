@@ -63,9 +63,8 @@ class StockServiceImplTest {
         verify(stockRepository).deleteById((Long) any());
     }
 
-    @Test
-    void updateStock() {
-    }
+
+
 
     @Test
     void retrieveStock() {
@@ -75,9 +74,8 @@ class StockServiceImplTest {
         Stock stock1 = stockService.retrieveStock(1L);
         assertSame(stock, stock1);
 
+
     }
 
-    @Test
-    void retrieveStatusStock() {
-    }
+
 }
