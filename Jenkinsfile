@@ -34,6 +34,27 @@ pipeline {
         //         }
         //     }
         // }
+//       stage('Build and Push front Image') {
+             steps {
+                 script {
+                     checkout([
+                         $class: 'GitSCM',
+                         branches: [[name: '*/anis']],
+                         userRemoteConfigs: [[url: 'https://github.com/Mohamed-Rouahi/Project-devops-frontend.git']]
+                    ])
+
+                     // Build the front Docker image
+                   def Image = docker.build('anisammar/devops', '-f /var/lib/jenkins/workspace/Project-devops/Dockerfile .')
+
+                     // Authentification Docker Hub avec des informations d'identification secrètes
+                     withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
+                        sh "docker login -u medrouahi -p ${pwd}"
+        //                 // Poussez l'image Docker
+                         Image.push()
+                     }
+                 }
+             }
+         }
            
 //         stage('Clean Workspace') {
 //             steps {
