@@ -44,7 +44,7 @@ pipeline {
                     ])
 
                      // Build the front Docker image
-                   def Image = docker.build('anisammar/devops', '-f /var/lib/jenkins/workspace/Project-devops/Dockerfile .')
+                   def Image = docker.build('anisammar/devops', '-f /var/lib/jenkins/workspace/Anis_Ammar_5TWIN3/Dockerfile .')
 
                      // Authentification Docker Hub avec des informations d'identification secrètes
                      withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
