@@ -40,7 +40,7 @@ pipeline {
                      checkout([
                          $class: 'GitSCM',
                          branches: [[name: '*/anis']],
-                         userRemoteConfigs: [[url: 'https://github.com/Mohamed-Rouahi/Project-devops-frontend.git']]
+                         userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
                     ])
 
                      // Build the front Docker image
