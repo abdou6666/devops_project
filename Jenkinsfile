@@ -56,20 +56,16 @@ pipeline {
        //       }
        //   }
         stage('Run Docker Compose') {
-                steps {
-                    script {
-                        checkout([
-                            $class: 'GitSCM',
-                            branches: [[name: '*/anis']],
-                            userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
-      
+    steps {
+        script {
+            checkout([
+                $class: 'GitSCM',
+                branches: [[name: '*/anis']], 
+                userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
             ])
-            
-            // Define the path to the docker-compose.yml file
-                def composeFilePath = "/var/lib/jenkins/workspace/Anis_Ammar_5TWIN3/docker-compose.yml"
 
-            // Run the docker-compose command with the file path
-                sh "docker compose up -d"
+            // Run the docker-compose command
+            sh 'docker compose up -d' 
         }
     }
 }
