@@ -3,7 +3,6 @@ pipeline {
 
     stages {
         stage('Checkout') {
-          stage('Checkout Git Project') {
             steps {
                 script {
                     def gitUrl = 'https://github.com/abdou6666/devops_project.git'
@@ -18,9 +17,6 @@ pipeline {
                 }
             }
         }
-        }
-      
-            
 
         stage('BUILD Backend') {
             steps {
@@ -30,34 +26,5 @@ pipeline {
                 }
             }
         }
-            
-    //     stage('Build Image') {
-    //          steps {
-    //              script {
-    //                  checkout([
-    //                      $class: 'GitSCM',
-    //                      branches: [[name: '*/anis']],
-    //                      userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
-    //                 ])
-
-    //                  // Build the front Docker image
-    //                def Image = docker.build('anisammar422/devops', '-f /var/lib/jenkins/workspace/Anis_Ammar_5TWIN3/Dockerfile .')
-
-    //                  // Authentification Docker Hub avec des informations d'identification secrètes
-    //             withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
-    //                      sh "docker login -u anisammar422 -p ${pwd}"
-    //                      // Poussez l'image Docker
-    //                      Image.push()
-    //                  }
-    //              }
-    //          }
-    //      }
-
-
-    //     stage('Clean Workspace') {
-    //         steps {
-    //             deleteDir()
-    //         }
-    //     }
-     }
+    }
 }
