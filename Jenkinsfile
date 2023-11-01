@@ -18,6 +18,8 @@ pipeline {
                 }
             }
         }
+        }
+      
             
 
         stage('BUILD Backend') {
