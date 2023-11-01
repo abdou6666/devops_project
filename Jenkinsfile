@@ -1,35 +1,44 @@
 pipeline {
     agent any
-
+ 
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    def gitUrl = 'https://github.com/abdou6666/devops_project.git'
-                    def branchName = 'anis'  // Specify your branch name here
-                    def gitCredentialsId = 'noreply'  // Specify your Git credentials ID here
-
-                    checkout([$class: 'GitSCM',
-                        branches: [[name: branchName]],
-                        doGenerateSubmoduleConfigurations: false,
-                        extensions: [[$class: 'CloneOption', depth: 1, noTags: true, reference: '', shallow: true]],
-                        userRemoteConfigs: [[url: gitUrl, credentialsId: gitCredentialsId]]
-                    ])
-                }
+                // Utilisation de Git pour récupérer le code
+                git branch: 'anis', url: 'https://github.com/abdou6666/devops_project.git'
             }
         }
-
-        stage('Maven Clean') {
+ 
+        stage('Clean compile maven') {
             steps {
-                sh 'mvn clean'
+                // Exécution des commandes Maven
+                sh 'mvn clean compile'
             }
         }
-
-        stage('Maven Compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-
+        //stage("SonarQube Analysis") {
+        //     steps {
+        //         // Set Java 11 for this stage
+        //         tool name: 'JAVA_HOME', type: 'jdk'
+        //         withEnv(["JAVA_HOME=${tool name: 'JAVA_HOME', type: 'jdk'}"]) {
+        //             withSonarQubeEnv('sonarQube') {
+        //                 script {
+        //                     def scannerHome = tool 'SonarQubeScanner'
+        //                     withEnv(["PATH+SCANNER=${scannerHome}/bin"]) {
+        //                         sh '''
+        //                             mvn sonar:sonar \
+        //                                 -Dsonar.java.binaries=target/classes
+        //                         '''
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+           
+//         stage('Clean Workspace') {
+//             steps {
+//                 deleteDir()
+//        }
+// }
     }
 }
