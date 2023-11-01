@@ -19,14 +19,7 @@ pipeline {
             }
         }
 
-    stage('Maven Clean') {
-    steps {
-        // Use Java 8 for this stage (if needed)
-        withEnv(["JAVA_HOME=${tool name: 'JAVA_8', type: 'jdk'}"]) {
-            sh 'mvn clean'
-        }
-    }
-}
+
 
     }
 }
