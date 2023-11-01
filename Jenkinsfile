@@ -9,8 +9,8 @@ pipeline {
             }
         }
  
-        stage('Clean compile maven') {
-            steps {
+    stage('Clean compile maven') {
+        steps {
                 // Exécution des commandes Maven
                 sh 'mvn clean compile'
             }
@@ -55,8 +55,8 @@ pipeline {
        //           }
        //       }
        //   }
-        stage('Run Docker Compose') {
-    steps {
+      stage('Run Docker Compose') {
+        steps {
         script {
             checkout([
                 $class: 'GitSCM',
@@ -65,16 +65,16 @@ pipeline {
             ])
 
             // Run the docker-compose command
-            sh 'docker compose up -d' 
+        sh 'docker compose up -d' 
         }
     }
 }
            
-//         stage('Clean Workspace') {
-//             steps {
-//                 deleteDir()
-//        }
-// }
+     stage('Clean Workspace') {
+            steps {
+                deleteDir()
+       }
+}
     }
 }
 
