@@ -6,8 +6,9 @@ pipeline {
             steps {
                 script {
                     def gitUrl = 'https://github.com/abdou6666/devops_project.git'
-                    def branchName = 'anis'
-                    def gitCredentialsId = 'noreply'
+                    def branchName = 'anis'  // Specify your branch name here
+                    def gitCredentialsId = 'noreply'  // Specify your Git credentials ID here
+
                     checkout([$class: 'GitSCM',
                         branches: [[name: branchName]],
                         doGenerateSubmoduleConfigurations: false,
@@ -18,9 +19,9 @@ pipeline {
             }
         }
 
-        stage('BUILD Backend') {
+        stage('Clean and Compile') {
             steps {
-                // Use Java 8 for this stage
+                // Use Java 8 for this stage (if needed)
                 withEnv(["JAVA_HOME=${tool name: 'JAVA_8', type: 'jdk'}"]) {
                     sh 'mvn clean compile'
                 }
