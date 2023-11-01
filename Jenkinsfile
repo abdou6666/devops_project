@@ -34,27 +34,41 @@ pipeline {
         //         }
         //     }
         // }
-       stage('Build and Push front Image') {
-             steps {
-                 script {
-                     checkout([
-                         $class: 'GitSCM',
-                         branches: [[name: '*/anis']],
-                         userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
-                    ])
+       // stage('Build and Push Back Image') {
+       //       steps {
+       //           script {
+       //               checkout([
+       //                   $class: 'GitSCM',
+       //                   branches: [[name: '*/anis']],
+       //                   userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
+       //              ])
 
-                     // Build the front Docker image
-                   def Image = docker.build('anisammar/devops', '-f /var/lib/jenkins/workspace/Anis_Ammar_5TWIN3/Dockerfile .')
+       //               // Build the front Docker image
+       //             def Image = docker.build('anisammar422/devops', '-f /var/lib/jenkins/workspace/Anis_Ammar_5TWIN3/Dockerfile .')
 
-                     // Authentification Docker Hub avec des informations d'identification secrètes
-                     withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
-                        sh "docker login -u anisammar422 -p ${pwd}"
-                         // Poussez l'image Docker
-                         Image.push()
-                     }
-                 }
-             }
-         }
+       //               // Authentification Docker Hub avec des informations d'identification secrètes
+       //          withCredentials([string(credentialsId: 'docker', variable: 'pwd')]) {
+       //                   sh "docker login -u anisammar422 -p ${pwd}"
+       //                   // Poussez l'image Docker
+       //                   Image.push()
+       //               }
+       //           }
+       //       }
+       //   }
+        stage('Run Docker Compose') {
+    steps {
+        script {
+            checkout([
+                $class: 'GitSCM',
+                branches: [[name: '*/anis']], 
+                userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
+            ])
+
+            // Run the docker-compose command
+            sh 'docker compose up -d' 
+        }
+    }
+}
            
 //         stage('Clean Workspace') {
 //             steps {
@@ -63,3 +77,5 @@ pipeline {
 // }
     }
 }
+
+
