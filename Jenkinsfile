@@ -55,20 +55,20 @@ pipeline {
        //           }
        //       }
        //   }
-      stage('Run Docker Compose') {
-        steps {
-        script {
-            checkout([
-                $class: 'GitSCM',
-                branches: [[name: '*/anis']], 
-                userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
-            ])
+//       stage('Run Docker Compose') {
+//         steps {
+//         script {
+//             checkout([
+//                 $class: 'GitSCM',
+//                 branches: [[name: '*/anis']], 
+//                 userRemoteConfigs: [[url: 'https://github.com/abdou6666/devops_project.git']]
+//             ])
 
-            // Run the docker-compose command
-        sh 'docker compose up -d' 
-        }
-    }
-}
+//             // Run the docker-compose command
+//         sh 'docker compose up -d' 
+//         }
+//     }
+// }
            
      stage('Clean Workspace') {
             steps {
