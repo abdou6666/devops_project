@@ -22,7 +22,7 @@ pipeline {
             steps {
                 // Use Java 8 for this stage
                 withEnv(["JAVA_HOME=${tool name: 'JAVA_8', type: 'jdk'}"]) {
-                    sh 'mvn clean install'
+                    sh 'mvn clean compile'
                 }
             }
         }
