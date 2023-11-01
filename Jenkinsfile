@@ -19,13 +19,14 @@ pipeline {
             }
         }
 
-        stage('Clean and Compile') {
-            steps {
-                // Use Java 8 for this stage (if needed)
-                withEnv(["JAVA_HOME=${tool name: 'JAVA_8', type: 'jdk'}"]) {
-                    sh 'mvn clean compile'
-                }
-            }
+    stage('Maven Clean') {
+    steps {
+        // Use Java 8 for this stage (if needed)
+        withEnv(["JAVA_HOME=${tool name: 'JAVA_8', type: 'jdk'}"]) {
+            sh 'mvn clean'
         }
+    }
+}
+
     }
 }
