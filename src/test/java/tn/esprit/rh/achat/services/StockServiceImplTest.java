@@ -9,7 +9,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import tn.esprit.rh.achat.entities.Stock;
 import tn.esprit.rh.achat.repositories.StockRepository;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -59,9 +61,6 @@ class StockServiceImplTest {
         verify(stockRepository).deleteById((Long) any());
     }
 
-
-
-
     @Test
     void retrieveStock() {
 
@@ -69,9 +68,21 @@ class StockServiceImplTest {
         when(stockRepository.findById(1L)).thenReturn(Optional.of(stock));
         Stock stock1 = stockService.retrieveStock(1L);
         assertSame(stock, stock1);
-
-
     }
+    @Test
+    void updateStock() {
+        Stock stock = new Stock();
+        stock.setLibelleStock("Stock 1");
+        when(stockRepository.save(stock)).thenReturn(stock);
+
+        Stock updatedStock = stockService.updateStock(stock);
+        assertSame(stock, updatedStock);
+        verify(stockRepository).save(stock);
+    }
+
+
+
+
 
 
 }
