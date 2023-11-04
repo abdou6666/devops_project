@@ -10,7 +10,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=achatdb
     networks:
-      - default 
+      - default  # Specify the network for the MySQL container
 
   back:
     build: ./
@@ -27,4 +27,4 @@ services:
     depends_on:
       - mysqldb
     networks:
-      - default  # Specify the same 
+      - default  # Specify the same network for the Spring Boot container
