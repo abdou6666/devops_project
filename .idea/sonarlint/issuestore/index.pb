@@ -24,3 +24,5 @@ Esrc/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java,0\5\057a
 Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
+r
+Bsrc/main/java/tn/esprit/rh/achat/repositories/StockRepository.java,b\4\b47681879c423e7163b8c95884a974b08be8b1c3
