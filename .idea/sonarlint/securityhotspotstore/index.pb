@@ -9,10 +9,6 @@ u
 Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
 9
 	achat.iml,4\a\4a938249f4d174adc7e536ac793ceb734147de98
-;
-JenkinsFile,2\2\22baaa42babe40fa251079ed1e8167c0eef7a13f
-;
-Jenkinsfile,0\c\0c2c5c506cef0ed2d3ad2b7e45e97980b66f5520
 f
 6src/main/java/tn/esprit/rh/achat/entities/Produit.java,e\2\e2220286d599e5889fd98c23f8c36a95afe2a3cd
 d
@@ -39,3 +35,5 @@ s
 Csrc/main/java/tn/esprit/rh/achat/services/OperateurServiceImpl.java,0\b\0b234be7fa057b8ddba600b797354d753b09916f
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+a
+1src/test/java/tn/esprit/rh/achat/SecteurTest.java,c\3\c31149ed79767fbd1153f125ee7b069261d22ddc
