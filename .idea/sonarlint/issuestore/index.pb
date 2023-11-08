@@ -37,3 +37,10 @@ Csrc/main/java/tn/esprit/rh/achat/services/OperateurServiceImpl.java,0\b\0b234b
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 a
 1src/test/java/tn/esprit/rh/achat/SecteurTest.java,c\3\c31149ed79767fbd1153f125ee7b069261d22ddc
+B
+docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+o
+?src/main/java/tn/esprit/rh/achat/entities/CategorieProduit.java,9\a\9ae45bcb50bc63be86a9b117995c406add4209b8
