@@ -26,7 +26,7 @@ import static org.mockito.Mockito.verify;
 
 @ContextConfiguration(classes = {SecteurActiviteServiceImpl.class})
 @ExtendWith(SpringExtension.class)
-public class SecteurTest {
+class SecteurTest {
     @MockBean
     private CategorieProduitRepository categorieProduitRepository;
 
