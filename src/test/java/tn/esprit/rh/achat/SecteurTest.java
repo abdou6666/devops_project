@@ -17,10 +17,9 @@ import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.verify;
@@ -74,5 +73,27 @@ class SecteurTest {
         doNothing().when(secteurActiviteRepository).deleteById((Long) any());
         secteurActiviteService.deleteSecteurActivite(123L);
         verify(secteurActiviteRepository).deleteById((Long) any());
+    }
+
+    @Test
+    void testRetrieveSecteurActivite() {
+        // Arrange
+        Long secteurId = 1L;
+        SecteurActivite expectedSecteurActivite = new SecteurActivite();
+        expectedSecteurActivite.setIdSecteurActivite(secteurId);
+        expectedSecteurActivite.setCodeSecteurActivite("Test Sector");
+
+        when(secteurActiviteRepository.findById(secteurId)).thenReturn(Optional.of(expectedSecteurActivite));
+
+        // Act
+        SecteurActivite retrievedSecteurActivite = secteurActiviteService.retrieveSecteurActivite(secteurId);
+
+        // Assert
+        assertNotNull(retrievedSecteurActivite);
+        assertEquals(expectedSecteurActivite.getIdSecteurActivite(), retrievedSecteurActivite.getIdSecteurActivite());
+        assertEquals(expectedSecteurActivite.getCodeSecteurActivite(), retrievedSecteurActivite.getCodeSecteurActivite());
+
+        // Verify that the findById method was called with the correct parameter
+        verify(secteurActiviteRepository).findById(secteurId);
     }
 }

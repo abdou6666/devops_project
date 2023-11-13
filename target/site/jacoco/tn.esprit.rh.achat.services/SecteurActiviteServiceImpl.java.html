@@ -19,8 +19,8 @@ import java.util.List;
 
 	@Override
 	public SecteurActivite addSecteurActivite(SecteurActivite sa) {
-<span class="nc" id="L22">		secteurActiviteRepository.save(sa);</span>
-<span class="nc" id="L23">		return sa;</span>
+<span class="fc" id="L22">		secteurActiviteRepository.save(sa);</span>
+<span class="fc" id="L23">		return sa;</span>
 	}
 
 	@Override
@@ -37,8 +37,8 @@ import java.util.List;
 
 	@Override
 	public SecteurActivite retrieveSecteurActivite(Long id) {
-<span class="nc" id="L40">		SecteurActivite secteurActivite = secteurActiviteRepository.findById(id).orElse(null);</span>
-<span class="nc" id="L41">		return secteurActivite;</span>
+<span class="fc" id="L40">		SecteurActivite secteurActivite = secteurActiviteRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L41">		return secteurActivite;</span>
 	}
 
 }
