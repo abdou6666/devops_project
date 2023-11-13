@@ -17,6 +17,7 @@ import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -38,6 +39,26 @@ class SecteurTest {
     @MockBean
     private StockRepository stockRepository;
 
+
+    @Test
+    void testAddSecteurActivite() {
+        // Arrange
+        SecteurActivite secteurActiviteToAdd = new SecteurActivite();
+        secteurActiviteToAdd.setIdSecteurActivite(1L);
+        secteurActiviteToAdd.setCodeSecteurActivite("Test Sector");
+
+        when(secteurActiviteRepository.save(any(SecteurActivite.class))).thenReturn(secteurActiviteToAdd);
+
+        // Act
+        SecteurActivite addedSecteurActivite = secteurActiviteService.addSecteurActivite(secteurActiviteToAdd);
+
+        // Assert
+        assertEquals(secteurActiviteToAdd.getIdSecteurActivite(), addedSecteurActivite.getIdSecteurActivite());
+        assertEquals(secteurActiviteToAdd.getCodeSecteurActivite(), addedSecteurActivite.getCodeSecteurActivite());
+
+        // Verify that the save method was called with the correct parameter
+        verify(secteurActiviteRepository).save(any(SecteurActivite.class));
+    }
     @Test
     void testRetrieveAllSectuer() {
         ArrayList<SecteurActivite> secteurList = new ArrayList<>();
