@@ -14,7 +14,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: deathknight666/achat:spring
+    image: deathknight666/achat:latest
     restart: on-failure
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true
