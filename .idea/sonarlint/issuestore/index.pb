@@ -48,3 +48,5 @@ w
 Gsrc/main/java/tn/esprit/rh/achat/controllers/FactureRestController.java,f\0\f07e983b8d6f4bc3e16b7e2a5dbd872211ecc664
 Z
 *src/test/java/tn/esprit/rh/achat/main.java,7\2\7220b0b0225774a102166ea51c2aced11e745646
+o
+?src/main/java/tn/esprit/rh/achat/services/StockServiceImpl.java,7\7\774a84db3f4411cbf35bc1a488de22a7d063b9cd
