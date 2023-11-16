@@ -50,3 +50,11 @@ Z
 *src/test/java/tn/esprit/rh/achat/main.java,7\2\7220b0b0225774a102166ea51c2aced11e745646
 o
 ?src/main/java/tn/esprit/rh/achat/services/StockServiceImpl.java,7\7\774a84db3f4411cbf35bc1a488de22a7d063b9cd
+s
+Csrc/test/java/tn/esprit/rh/achat/FactureServiceImplMockitoTest.java,1\5\15cf8a08d880646e2a1e98971a9f59d00942f82c
+u
+Esrc/test/java/tn/esprit/rh/achat/ReglementServiceImplMockitoTest.java,4\f\4f6f6321c6ad30d84bb3953b663a06bd775f42c5
+f
+6src/main/java/tn/esprit/rh/achat/entities/Facture.java,3\c\3c6f7760de745cb3c28e4dc7e4888c90b2865084
+h
+8src/main/java/tn/esprit/rh/achat/entities/Reglement.java,c\2\c22269e0381fa873b71249357fc21699e21412ad
