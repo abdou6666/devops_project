@@ -27,6 +27,9 @@ services:
         "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
+        "management.endpoints.web.exposure.include":"*",
+        "management.endpoint.metrics.enabled":true,
+        "management.metrics.export.prometheus.enabled":true,
       }'
     volumes:
       - .m2:/root/.m2
